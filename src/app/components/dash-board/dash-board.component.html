@@ -1,0 +1,17 @@
+<div class="iframe-container">
+    <oracle-dv  project-path="/@Catalog/shared/Reportes BM/Trabajo Colaborativo/Franja_Quieta/FRANJAS_BASES_QUIETAS"></oracle-dv>
+</div>
+  
+<script>
+    console.log(window.token);
+    requirejs(['jquery', 'knockout', 'obitech-application/application', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'],
+    function($, ko, application) {
+    application.setSecurityConfig("token", {tokenAuthFunction:
+        function(){
+            return window.token;
+        }
+    });
+    ko.applyBindings();
+    });
+</script>
+    
