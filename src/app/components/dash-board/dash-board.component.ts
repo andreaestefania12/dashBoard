@@ -20,6 +20,7 @@ export class DashBoardComponent  implements OnInit{
     this.authService.getToken().subscribe({
       next: (response: AuthResponse) => { 
         window.token = response.access_token;
+        console.log(window.token);
       },
       error: (error) => {
         console.error('Error:', error);
